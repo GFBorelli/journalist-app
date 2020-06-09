@@ -1,22 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { ActivityIndicator } from 'react-native'
+import { useDispatch } from 'react-redux'
+
+import { updateNewsRequest } from '../../store/modules/news/actions'
 
 import Background from '../../components/Background'
 import { Container, Form, NewsTitle, NewsContent, UserPicker, Button, ButtonText } from './styles';
 
 const register = ({ navigation }) => {
+
+  const contentRef = useRef()
+
   const [loading, setLoading] = useState(true)
   const [authorList, setAuthorList] = useState('');
   const [selectedAuthor, setSelectedAuthor] = useState('');
+  const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(json => {
-        setAuthorList(json)
-        setLoading(false)
-      })
+    async function loadAuthorList() {
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(json => {
+          setAuthorList(json)
+          setLoading(false)
+        })
+    }
+
+    loadAuthorList()
   }, [])
+
+  function handleSubmit() {
+    dispatch(
+      updateNewsRequest({
+        selectedAuthor,
+        title,
+        content
+      })
+    );
+  }
 
   return (
     <Background>
@@ -28,9 +52,10 @@ const register = ({ navigation }) => {
         <Container>
 
           <Form>
+
             <UserPicker
               selectedValue={selectedAuthor}
-              onValueChange={(author) => setSelectedAuthor(author)}
+              onValueChange={author => setSelectedAuthor(author)}
             >
               <UserPicker.Item key="default" label="Escolha um autor" value="default" />
               {authorList.map((author) => (
@@ -40,21 +65,24 @@ const register = ({ navigation }) => {
             </UserPicker>
 
             <NewsTitle
-              autoCorrect={false}
-              autoCaptalize='none'
               placeholder='Título da matéria'
               returnKeyType='next'
+              onSubmitEditing={() => contentRef.current.focus()}
+              value={title}
+              onChangeText={setTitle}
             />
+
             <NewsContent
-              autoCorrect={false}
-              autoCaptalize='none'
               placeholder='Conteúdo da matéria'
-              returnKeyType='next'
               multiline={true}
+              ref={contentRef}
+              value={content}
+              onChangeText={setContent}
             />
+
           </Form>
 
-          <Button onPress={() => { }}>
+          <Button onPress={handleSubmit}>
             <ButtonText>Publicar notícia</ButtonText>
           </Button>
 
