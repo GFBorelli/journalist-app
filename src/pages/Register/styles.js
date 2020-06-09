@@ -49,7 +49,7 @@ export const UserPicker = styled(Picker)`
 export const Button = styled(RectButton)`
     padding: 15px;
     margin-top: 15px;
-    background: #000;
+    background: rgba(125, 125, 125, 0.4);
     width: 200px;
     align-items: center;
     border-radius: 5px;

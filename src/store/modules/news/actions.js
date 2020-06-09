@@ -1,19 +1,19 @@
-export function updateNewsRequest(news) {
+export function createNewsRequest(news) {
     return {
-        type: '@news/UPDATE_NEWS_REQUEST',
+        type: '@news/CREATE_NEWS_REQUEST',
         payload: news
     }
 }
 
-export function updateNewsSuccess(news) {
+export function createNewsSuccess(news) {
     return {
-        type: '@news/UPDATE_NEWS_SUCCESS',
+        type: '@news/CREATE_NEWS_SUCCESS',
         payload: news
     }
 }
 
-export function updateNewsFailure() {
+export function createNewsFailure() {
     return {
-        type: '@news/UPDATE_NEWS_FAILURE'
+        type: '@news/CREATE_NEWS_FAILURE'
     }
 }

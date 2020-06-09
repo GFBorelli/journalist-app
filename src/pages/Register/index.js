@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { ActivityIndicator } from 'react-native'
 import { useDispatch } from 'react-redux'
 
-import { updateNewsRequest } from '../../store/modules/news/actions'
+import { createNewsRequest } from '../../store/modules/news/actions'
 
 import Background from '../../components/Background'
 import { Container, Form, NewsTitle, NewsContent, UserPicker, Button, ButtonText } from './styles';
@@ -34,7 +34,7 @@ const register = ({ navigation }) => {
 
   function handleSubmit() {
     dispatch(
-      updateNewsRequest({
+      createNewsRequest({
         selectedAuthor,
         title,
         content
