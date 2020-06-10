@@ -18,6 +18,12 @@ export function createNewsFailure() {
     }
 }
 
+export function editNewsRequest() {
+    return {
+        type: '@news/EDIT_NEWS_REQUEST'
+    }
+}
+
 export function removeNews(id) {
     return {
         type: '@news/REMOVE',

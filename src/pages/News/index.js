@@ -9,10 +9,15 @@ import Background from '../../components/Background'
 import { Container, List, NewsCard, Title, Author, NewsContent, ButtonsContainer, Button } from './styles';
 
 
-const News = () => {
+const News = ({ navigation }) => {
   const news = useSelector(state => state.news.news)
 
   const dispatch = useDispatch()
+
+  function handleEdit(news) {
+    navigation.navigate('NewsEdit', { news })
+
+  }
 
   function handleDelete(id) {
     dispatch(
@@ -34,7 +39,7 @@ const News = () => {
               <NewsContent>{item.content}</NewsContent>
               <Author>Por: {item.selectedAuthor}</Author>
               <ButtonsContainer>
-                <Button background={'#FFC107'}>
+                <Button background={'#FFC107'} onPress={() => handleEdit(item)}>
                   <Icon name="edit" size={40} color="#fff" />
                 </Button>
 

@@ -1,21 +1,21 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { ActivityIndicator } from 'react-native'
+import { ActivityIndicator, Text } from 'react-native'
 import { useDispatch } from 'react-redux'
 
-import { createNewsRequest } from '../../store/modules/news/actions'
+import { editNewsRequest } from '../../store/modules/news/actions'
 
 import Background from '../../components/Background'
 import { Container, Form, NewsTitle, NewsContent, UserPicker, Button, ButtonText } from './styles';
 
-const register = ({ navigation }) => {
+const newsEdit = ({ route, navigation }) => {
 
   const contentRef = useRef()
 
   const [loading, setLoading] = useState(true)
   const [authorList, setAuthorList] = useState('');
-  const [selectedAuthor, setSelectedAuthor] = useState('');
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
+  const [selectedAuthor, setSelectedAuthor] = useState(route.params.news.selectedAuthor);
+  const [title, setTitle] = useState(route.params.news.title)
+  const [content, setContent] = useState(route.params.news.content)
 
   const dispatch = useDispatch();
 
@@ -32,9 +32,9 @@ const register = ({ navigation }) => {
     loadAuthorList()
   }, [])
 
-  function handleSubmit(id) {
+  function handleEdit(id) {
     dispatch(
-      createNewsRequest({
+      editNewsRequest({
         id,
         selectedAuthor,
         title,
@@ -57,7 +57,7 @@ const register = ({ navigation }) => {
         <Container>
 
           <Form>
-
+            <Text style={{ color: '#FFF', paddingLeft: 10 }}>{'Autor'}</Text>
             <UserPicker
               selectedValue={selectedAuthor}
               onValueChange={author => setSelectedAuthor(author)}
@@ -69,6 +69,7 @@ const register = ({ navigation }) => {
 
             </UserPicker>
 
+            <Text style={{ color: '#FFF', paddingLeft: 10 }}>{'Titulo'}</Text>
             <NewsTitle
               placeholder='Título da matéria'
               returnKeyType='next'
@@ -77,6 +78,7 @@ const register = ({ navigation }) => {
               onChangeText={setTitle}
             />
 
+            <Text style={{ color: '#FFF', paddingLeft: 10 }}>{'Conteúdo'}</Text>
             <NewsContent
               placeholder='Conteúdo da matéria'
               multiline={true}
@@ -87,12 +89,12 @@ const register = ({ navigation }) => {
 
           </Form>
 
-          <Button onPress={() => handleSubmit(new Date().getTime())}>
-            <ButtonText>Publicar notícia</ButtonText>
+          <Button onPress={() => handleEdit(route.params.news.id)}>
+            <ButtonText>Editar notícia</ButtonText>
           </Button>
 
           <Button onPress={() => navigation.navigate('News')}>
-            <ButtonText>Ir para notícias</ButtonText>
+            <ButtonText>Voltar as notícias</ButtonText>
           </Button>
 
         </Container>}
@@ -100,4 +102,4 @@ const register = ({ navigation }) => {
   );
 }
 
-export default register;
+export default newsEdit;
