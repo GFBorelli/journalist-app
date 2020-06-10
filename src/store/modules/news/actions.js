@@ -17,3 +17,10 @@ export function createNewsFailure() {
         type: '@news/CREATE_NEWS_FAILURE'
     }
 }
+
+export function removeNews(id) {
+    return {
+        type: '@news/REMOVE',
+        id
+    }
+}

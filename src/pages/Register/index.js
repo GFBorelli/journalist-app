@@ -32,9 +32,10 @@ const register = ({ navigation }) => {
     loadAuthorList()
   }, [])
 
-  function handleSubmit() {
+  function handleSubmit(id) {
     dispatch(
       createNewsRequest({
+        id,
         selectedAuthor,
         title,
         content
@@ -82,7 +83,7 @@ const register = ({ navigation }) => {
 
           </Form>
 
-          <Button onPress={handleSubmit}>
+          <Button onPress={() => handleSubmit(new Date().getTime())}>
             <ButtonText>Publicar notícia</ButtonText>
           </Button>
 

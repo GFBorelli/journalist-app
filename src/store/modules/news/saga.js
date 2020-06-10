@@ -6,11 +6,11 @@ import { createNewsSuccess, createNewsFailure } from './actions'
 export function* createNews({ payload }) {
     try {
         yield put(createNewsSuccess(payload))
-        Alert.alert('Sucesso', 'Notícia atualizada')
+        Alert.alert('Sucesso', 'Notícia publicada')
 
     } catch (erro) {
         yield put(createNewsFailure())
-        Alert.alert('Erro na atualização', 'Houve um erro na atualização, verifique os dados')
+        Alert.alert('Erro na publicação', 'Houve um erro na publicação, verifique os dados')
     }
 }
 

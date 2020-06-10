@@ -1,7 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
+import { removeNews } from '../../store/modules/news/actions'
 
 import Background from '../../components/Background'
 import { Container, List, NewsCard, Title, Author, NewsContent, ButtonsContainer, Button } from './styles';
@@ -10,23 +12,33 @@ import { Container, List, NewsCard, Title, Author, NewsContent, ButtonsContainer
 const News = () => {
   const news = useSelector(state => state.news.news)
 
+  const dispatch = useDispatch()
+
+  function handleDelete(id) {
+    dispatch(
+      removeNews({
+        id
+      })
+    );
+  }
+
   return (
     <Background>
       <Container>
         <List
           data={news}
-          keyExtractor={item => news[item]}
+          keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <NewsCard>
               <Title>{item.title}</Title>
-              <Author>Por: {item.selectedAuthor}</Author>
               <NewsContent>{item.content}</NewsContent>
+              <Author>Por: {item.selectedAuthor}</Author>
               <ButtonsContainer>
                 <Button background={'#FFC107'}>
                   <Icon name="edit" size={40} color="#fff" />
                 </Button>
 
-                <Button background={'#DC3545'}>
+                <Button background={'#DC3545'} onPress={() => handleDelete(item.id)}>
                   <Icon name="clear" size={40} color="#fff" />
                 </Button>
               </ButtonsContainer>

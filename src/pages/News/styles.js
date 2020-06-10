@@ -10,7 +10,7 @@ export const List = styled.FlatList.attrs({
 })``;
 
 export const NewsCard = styled.View`
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 4px;
     width: 350px;
     margin-top: 20px;

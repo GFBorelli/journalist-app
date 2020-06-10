@@ -10,24 +10,23 @@ export const Container = styled.View`
 export const Form = styled.View`
     margin: 30px 0px;
     padding: 5px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 4px;
     width: 350px;
     height: 400px;
 `
 
 export const NewsTitle = styled.TextInput.attrs({
-    placeholderTextColor: 'rgba(0, 0, 0, 0.8)'
+    placeholderTextColor: 'rgb(0, 0, 0)'
 })`
     background: #fff;
-    flex: 1;
     font-size: 15px;
     margin: 10px;
     color: #000;
     border-radius: 4px;
 `
 export const NewsContent = styled.TextInput.attrs({
-    placeholderTextColor: 'rgba(0, 0, 0, 0.8)'
+    placeholderTextColor: 'rgb(0, 0, 0)'
 })`
     background: #fff;
     flex: 10;
@@ -38,7 +37,6 @@ export const NewsContent = styled.TextInput.attrs({
 `
 
 export const UserPicker = styled(Picker)`
-    flex: 2;
     background: #fff;
     font-size: 15px;
     margin: 10px;
@@ -49,7 +47,7 @@ export const UserPicker = styled(Picker)`
 export const Button = styled(RectButton)`
     padding: 15px;
     margin-top: 15px;
-    background: rgba(125, 125, 125, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     width: 200px;
     align-items: center;
     border-radius: 5px;
