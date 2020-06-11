@@ -12,15 +12,23 @@ export function createNewsSuccess(news) {
     }
 }
 
-export function createNewsFailure() {
+export function newsFailure() {
     return {
-        type: '@news/CREATE_NEWS_FAILURE'
+        type: '@news/NEWS_FAILURE'
     }
 }
 
-export function editNewsRequest() {
+export function editNewsRequest(news) {
     return {
-        type: '@news/EDIT_NEWS_REQUEST'
+        type: '@news/EDIT_NEWS_REQUEST',
+        payload: news
+    }
+}
+
+export function editNewsSuccess(news) {
+    return {
+        type: '@news/EDIT_NEWS_SUCCESS',
+        payload: news
     }
 }
 

@@ -11,6 +11,14 @@ export default function news(state = INITIAL_STATE, action) {
                 draft.news = [action.payload, ...state.news]
                 break
 
+            case '@news/EDIT_NEWS_SUCCESS':
+
+                const idToEdit = action.payload.id
+                const newsToEditIndex = draft.news.findIndex(news => news.id === idToEdit)
+
+                draft.news[newsToEditIndex] = action.payload
+                break
+
             case '@news/REMOVE':
                 const { id } = action.id
                 const newsIndex = draft.news.findIndex(news => news.id === id)

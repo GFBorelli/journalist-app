@@ -41,10 +41,6 @@ const newsEdit = ({ route, navigation }) => {
         content
       })
     );
-
-    setSelectedAuthor('default')
-    setTitle('')
-    setContent('')
   }
 
   return (
