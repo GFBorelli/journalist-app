@@ -10,7 +10,7 @@ export const Container = styled.View`
 export const Form = styled.View`
     margin: 30px 0px;
     padding: 5px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     width: 350px;
     height: 400px;
@@ -48,7 +48,7 @@ export const UserPicker = styled(Picker)`
 export const Button = styled(RectButton)`
     padding: 15px;
     margin-top: 15px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     width: 200px;
     align-items: center;
     border-radius: 5px;

@@ -45,6 +45,7 @@ const register = ({ navigation }) => {
     setSelectedAuthor('default')
     setTitle('')
     setContent('')
+    navigation.navigate('News')
   }
 
   return (

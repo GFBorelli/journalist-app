@@ -41,6 +41,7 @@ const newsEdit = ({ route, navigation }) => {
         content
       })
     );
+    navigation.navigate('News')
   }
 
   return (
