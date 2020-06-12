@@ -32,7 +32,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O projeto visa simular o front-end mobile de um sistema para cadastro notícias.
+O projeto visa simular o front-end de um e-commerce.
 
 ## 📚 Instruções
 
