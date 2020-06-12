@@ -5,7 +5,7 @@
 <br>
 
 <p align="center">
-  <img alt="Frontend" src="tela.jpg" width="100%">
+  <img alt="Frontend" src="tela.JPG" width="100%">
 </p>
 
 <h4 align="center">
@@ -19,7 +19,7 @@
 </p>
 
 
-## :wrench: Tecnologias
+## Tecnologias :wrench:  
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -30,10 +30,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Styled Components](https://styled-components.com/)
 - Diversas bibliotecas como React Native Vector Icons, Immer e etc
 
-## 💻 Projeto
+## Projeto 💻  
 
-O projeto visa simular o front-end de um e-commerce.
+O projeto visa simular o front-end mobile de um sistema para cadastro notícias.
 
-## 📚 Instruções
+## Instruções 📚  
 
 Para rodar a aplicação utilizar o comando 'yarn' ou 'npm i' (o que você utilizar) no diretório 'rocketshoes', após concluída a instalação dos pacotes, no diretório 'rocketshoes' utilizar os comandos 'json-server server.json -p 3333' e 'yarn start'/'npm start', a aplicação iniciará automaticamente.
