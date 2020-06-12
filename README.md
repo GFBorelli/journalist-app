@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1 align="center">
 	Challenge
 </h1>
@@ -38,7 +37,3 @@ O projeto visa simular o front-end mobile de um sistema para cadastro notícias.
 ## 📚 Instruções
 
 Para rodar a aplicação utilizar o comando 'yarn' ou 'npm i' (o que você utilizar) no diretório 'rocketshoes', após concluída a instalação dos pacotes, no diretório 'rocketshoes' utilizar os comandos 'json-server server.json -p 3333' e 'yarn start'/'npm start', a aplicação iniciará automaticamente.
-=======
-# flexChallenge
- 
->>>>>>> parent of c6b114d... Update README.md
