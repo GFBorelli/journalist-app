@@ -5,7 +5,7 @@
 <br>
 
 <p align="center">
-  <img alt="Frontend" src="tela.JPG" width="100%">
+  <img alt="Frontend" src="tela.jpg" width="100%">
 </p>
 
 <h4 align="center">
