@@ -1,5 +1,5 @@
 <h1 align="center">
-	Challenge
+	Journalist App
 </h1>
 
 <br>
